@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_appName__",
+  "version": "2.0.0",
+  "description": "__MSG_appDesc__",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/lock-16.png",
+      "48": "images/lock-48.png",
+      "128": "images/lock-128.png"
+    }
+  },
+  "icons": {
+    "16": "images/lock-16.png",
+    "48": "images/lock-48.png",
+    "128": "images/lock-128.png"
+  },
+  "permissions": [
+    "clipboardWrite"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "default_locale": "zh_CN"
+} 

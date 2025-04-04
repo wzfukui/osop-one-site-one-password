@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一站一密 - 常见问题</title>
+  <link href="css/new/web.css" rel="stylesheet">
+  <link href="css/new/faq.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-container">
+      <img src="images/lock-48.png" alt="OSOP Logo">
+      <h1 data-i18n="app_name">一站一密</h1>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" data-i18n="nav_generate">生成密码</a>
+      <a href="faq.html" class="active" data-i18n="nav_faq">帮助中心</a>
+      <a href="privacy.html" data-i18n="nav_privacy">隐私政策</a>
+      <a href="https://github.com/wzfukui/osop-one-site-one-password" target="_blank">GitHub</a>
+      <div class="language-switch">
+        <button id="zh-btn" class="lang-btn active">中文</button>
+        <button id="en-btn" class="lang-btn">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="content-container">
+    <div class="faq-header">
+      <h2 data-i18n="faq_title">常见问题</h2>
+      <p data-i18n="app_slogan">用时生成，而不是存储密码！</p>
+    </div>
+
+    <div class="faq-content">
+      <div class="faq-section">
+        <h3 data-i18n="faq_q1">什么是一站一密？</h3>
+        <div class="faq-answer">
+          <p data-i18n="faq_a1">一站一密是一个密码生成器，它使用简单算法为每个网站生成唯一的强密码。与传统密码管理不同，我们不存储密码，而是在需要时生成。</p>
+        </div>
+      </div>
+      
+      <div class="faq-section">
+        <h3 data-i18n="faq_q2">为什么一站一密比密码管理更安全？</h3>
+        <div class="faq-answer">
+          <p data-i18n="faq_a2">传统密码管理器存储所有密码，成为攻击目标。一站一密不存储密码，没有数据库可被黑。所有密码生成在本地完成，提供更高安全性。</p>
+        </div>
+      </div>
+      
+      <div class="faq-section">
+        <h3 data-i18n="faq_q3">如何使用一站一密？</h3>
+        <div class="faq-answer" data-i18n="faq_a3">
+          <p>使用非常简单:</p>
+          <ol>
+            <li>输入网站名称（如"gmail"或"facebook"）</li>
+            <li>输入您的个人暗语（至少5个字符）</li>
+            <li>点击"生成密码"</li>
+            <li>选择并复制适合该网站的密码长度</li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="faq-section">
+        <h3 data-i18n="faq_q4">忘记暗语怎么办？</h3>
+        <div class="faq-answer">
+          <p data-i18n="faq_a4">暗语是生成密码的关键。如果忘记，将无法重新生成相同密码。建议选择一个有意义但不易被猜到的暗语，或将其安全记录在离线介质上。</p>
+        </div>
+      </div>
+      
+      <div class="faq-section">
+        <h3 data-i18n="faq_q5">每次生成的密码是否相同？</h3>
+        <div class="faq-answer">
+          <p data-i18n="faq_a5">是的，只要使用相同的网站名称和暗语，生成的密码一定相同。请确保输入一致（如总是使用"gmail"而非有时"gmail.com"）。</p>
+        </div>
+      </div>
+      
+      <div class="faq-section">
+        <h3 data-i18n="faq_q6">密码强度如何？</h3>
+        <div class="faq-answer">
+          <p data-i18n="faq_a6">生成的密码包含大小写字母、数字和特殊字符，符合大多数网站要求。提供8位、14位和20位三种长度选择，适应不同安全需求。</p>
+        </div>
+      </div>
+      
+      <div class="faq-section">
+        <h3 data-i18n="faq_q7">是否支持多种设备？</h3>
+        <div class="faq-answer">
+          <p data-i18n="faq_a7">是的，一站一密可在任何浏览器中使用，同时提供Chrome扩展版本。只要使用相同的暗语和网站名，在任何设备上都能生成相同的密码。</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="https://github.com/wzfukui/osop-one-site-one-password" target="_blank" data-i18n="footer_github">GitHub</a>
+      <a href="faq.html" data-i18n="footer_help">帮助</a>
+      <a href="privacy.html" data-i18n="nav_privacy">隐私政策</a>
+      <a href="http://www.51pwd.com" target="_blank" data-i18n="footer_web">网页版</a>
+    </div>
+    <div class="footer-copyright">
+      <p data-i18n="footer_copyright">© 2012-2025 OSOP - 一站一密 捍卫密码，捍卫安全！</p>
+    </div>
+  </footer>
+
+  <script src="scripts/new/jquery-3.6.0.min.js"></script>
+  <script>window.jQuery || document.write('<script src="scripts/new/jquery-3.6.0.min.js"><\/script>')</script>
+  <script src="scripts/new/i18n.js"></script>
+  <script>
+    $(document).ready(function() {
+      // 初始化语言
+      const currentLang = OSOP_i18n.loadLanguagePreference();
+      
+      // 更新语言按钮状态
+      function updateLangButtons() {
+        if (OSOP_i18n.currentLanguage === 'zh') {
+          $('#zh-btn').addClass('active');
+          $('#en-btn').removeClass('active');
+        } else {
+          $('#zh-btn').removeClass('active');
+          $('#en-btn').addClass('active');
+        }
+      }
+      
+      // 更新页面文本
+      OSOP_i18n.updatePageText();
+      updateLangButtons();
+      
+      // 语言切换事件
+      $('#zh-btn').on('click', function() {
+        if (OSOP_i18n.switchLanguage('zh')) {
+          updateLangButtons();
+        }
+      });
+      
+      $('#en-btn').on('click', function() {
+        if (OSOP_i18n.switchLanguage('en')) {
+          updateLangButtons();
+        }
+      });
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一站一密 - 隐私政策</title>
+  <link href="css/new/web.css" rel="stylesheet">
+  <link href="css/new/faq.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-container">
+      <img src="images/lock-48.png" alt="OSOP Logo">
+      <h1 data-i18n="app_name">一站一密</h1>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" data-i18n="nav_generate">生成密码</a>
+      <a href="faq.html" data-i18n="nav_faq">帮助中心</a>
+      <a href="privacy.html" class="active" data-i18n="nav_privacy">隐私政策</a>
+      <a href="https://github.com/wzfukui/osop-one-site-one-password" target="_blank">GitHub</a>
+      <div class="language-switch">
+        <button id="zh-btn" class="lang-btn active">中文</button>
+        <button id="en-btn" class="lang-btn">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="content-container">
+    <div class="faq-header">
+      <h2 data-i18n="privacy_title">隐私政策</h2>
+      <p data-i18n="privacy_intro">一站一密（OSOP）非常重视您的隐私保护。本隐私政策说明我们如何收集、使用、保护和共享您的信息。</p>
+    </div>
+
+    <div class="faq-content">
+      <div class="faq-section">
+        <h3 data-i18n="privacy_collect_title">信息收集</h3>
+        <div class="faq-answer">
+          <p data-i18n="privacy_collect_content">我们不收集任何个人数据。所有密码生成计算完全在您的本地设备上进行，不会传输到我们的服务器或任何第三方服务器。</p>
+        </div>
+      </div>
+      
+      <div class="faq-section">
+        <h3 data-i18n="privacy_cookies_title">Cookie使用</h3>
+        <div class="faq-answer">
+          <p data-i18n="privacy_cookies_content">我们不使用任何Cookie或类似技术来跟踪您的活动。</p>
+        </div>
+      </div>
+      
+      <div class="faq-section">
+        <h3 data-i18n="privacy_security_title">安全措施</h3>
+        <div class="faq-answer" data-i18n="privacy_security_content">
+          <p>为保护您的信息安全：</p>
+          <ul>
+            <li>所有生成的密码在60秒后自动从页面清除</li>
+            <li>所有计算过程仅在您的浏览器内存中进行，不写入任何存储</li>
+            <li>我们的代码完全开源，您可以审计所有操作</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="faq-section">
+        <h3 data-i18n="privacy_updates_title">政策更新</h3>
+        <div class="faq-answer">
+          <p data-i18n="privacy_updates_content">我们可能会不时更新本隐私政策。建议您定期查看本页面以获取最新信息。</p>
+        </div>
+      </div>
+      
+      <div class="faq-section">
+        <h3 data-i18n="privacy_contact_title">联系我们</h3>
+        <div class="faq-answer">
+          <p data-i18n="privacy_contact_content">如果您对我们的隐私政策有任何疑问，请通过GitHub项目页面联系我们。</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="https://github.com/wzfukui/osop-one-site-one-password" target="_blank" data-i18n="footer_github">GitHub</a>
+      <a href="faq.html" data-i18n="footer_help">帮助</a>
+      <a href="privacy.html" data-i18n="nav_privacy">隐私政策</a>
+      <a href="http://www.51pwd.com" target="_blank" data-i18n="footer_web">网页版</a>
+    </div>
+    <div class="footer-copyright">
+      <p data-i18n="footer_copyright">© 2012-2024 OSOP - 一站一密 捍卫密码，捍卫安全！</p>
+    </div>
+  </footer>
+
+  <script src="scripts/new/jquery-3.6.0.min.js"></script>
+  <script>window.jQuery || document.write('<script src="scripts/new/jquery-3.6.0.min.js"><\/script>')</script>
+  <script src="scripts/new/i18n.js"></script>
+  <script>
+    $(document).ready(function() {
+      // 初始化语言
+      const currentLang = OSOP_i18n.loadLanguagePreference();
+      
+      // 更新语言按钮状态
+      function updateLangButtons() {
+        if (OSOP_i18n.currentLanguage === 'zh') {
+          $('#zh-btn').addClass('active');
+          $('#en-btn').removeClass('active');
+        } else {
+          $('#zh-btn').removeClass('active');
+          $('#en-btn').addClass('active');
+        }
+      }
+      
+      // 更新页面文本
+      OSOP_i18n.updatePageText();
+      updateLangButtons();
+      
+      // 语言切换事件
+      $('#zh-btn').on('click', function() {
+        if (OSOP_i18n.switchLanguage('zh')) {
+          updateLangButtons();
+        }
+      });
+      
+      $('#en-btn').on('click', function() {
+        if (OSOP_i18n.switchLanguage('en')) {
+          updateLangButtons();
+        }
+      });
+    });
+  </script>
+</body>
+</html> 
