@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_appName__",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "__MSG_appDesc__",
   "action": {
     "default_popup": "popup.html",
@@ -22,5 +22,10 @@
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   },
-  "default_locale": "zh_CN"
+  "web_accessible_resources": [{
+    "resources": ["scripts/*.js", "images/*", "css/*"],
+    "matches": ["<all_urls>"]
+  }],
+  "default_locale": "zh_CN",
+  "minimum_chrome_version": "88"
 } 
